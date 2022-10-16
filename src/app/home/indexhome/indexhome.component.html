@@ -1,0 +1,69 @@
+<div class="contenedorTiempo">
+    <h1 class="title">
+        Tiempo restante para las
+        <select [(ngModel)]="currentHora[0]" (change)="setDate()" class="time">
+            <option *ngFor="let item of horas; let i=index" value="{{item}}">{{item}}</option>
+        </select>
+        :
+        <select [(ngModel)]="currentHora[1]" (change)="setDate()" class="time">
+            <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
+        </select>
+        :
+        <select [(ngModel)]="currentHora[2]" (change)="setDate()" class="time">
+            <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
+        </select>
+    </h1>
+    <!-- <table class="tiempoTable {{claseT2}}">
+        <thead>
+            <tr class="timeHeader">
+                <th>HOURS</th>
+                <th></th>
+                <th>MINUTES</th>
+                <th></th>
+                <th>SECONDS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="timeBody">
+                <td>{{hora2[0]}}</td>
+                <td>:</td>
+                <td>{{hora2[1]}}</td>
+                <td>:</td>
+                <td>{{hora2[2]}}</td>
+            </tr>
+        </tbody>
+    </table> -->
+    <table class="tiempoTable {{claseT1}}">
+        <thead>
+            <tr class="timeHeader">
+                <th>HOURS</th>
+                <th></th>
+                <th>MINUTES</th>
+                <th></th>
+                <th>SECONDS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="timeBody">
+                <td>{{hora1[0]}}</td>
+                <td>:</td>
+                <td>{{hora1[1]}}</td>
+                <td>:</td>
+                <td>{{hora1[2]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="ball changeBall" (click)="changeUser()" (cdkDragStarted)="drag1()" (cdkDragEnded)="drag2()"
+        cdkDragBoundary=".contenedorTiempo" cdkDrag>
+        <img class="imgBall" src="/assets/IMG/user.png" alt="imgUser.png">
+    </div>
+
+    <!-- <div class="ball timeUser" [ngClass]="{'extender': activo==true, 'aparecer':activo==false}"
+        (cdkDragStarted)="drag1()" (cdkDragEnded)="drag2()" cdkDragBoundary=".contenedorTiempo" cdkDrag>
+        <img (click)="changeState()" class="imgBall" src="/assets/IMG/timer.png" alt="">
+        <input type="text" class="time" [(ngModel)]="myTime" [ngClass]="{'display':activo==null}" maxlength="8"
+            (keyup)="controlTime()">
+
+    </div> -->
+</div>

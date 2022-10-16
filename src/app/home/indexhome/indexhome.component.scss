@@ -1,0 +1,150 @@
+@import "/src/styles.scss";
+$color: #310a65;
+
+.contenedorTiempo {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: auto;
+    background-image: linear-gradient(30deg, #8000ff, #4220dc, #0057ed, #0038e0, #006ce0, #0072c4, #6a1baf);
+    text-align: center;
+    overflow: hidden;
+}
+
+.title {
+    color: white;
+    font-family: title;
+    font-size: 400%;
+    margin: auto;
+    text-shadow: 0 0 5px black;
+    padding-top: 30px;
+    user-select: none;
+}
+
+.tiempoTable {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-family: tiempo;
+    margin: auto;
+    color: white;
+    width: 80%;
+    background-image: linear-gradient(60deg, #0096ff, #001eff, #6600ff);
+    box-shadow: inset 0 0 25px $color, 0 0 25px $color, 0 0 75px $color, 0 0 125px $color;
+    text-shadow: 0 0 10px $color;
+    padding-top: 55px;
+    padding-bottom: 45px;
+    padding-left: 30px;
+    border-radius: 20px;
+    user-select: none;
+}
+
+.timeHeader {
+    font-size: 300%;
+}
+
+.timeBody {
+    font-size: 800%;
+}
+
+.ball {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid white;
+    box-shadow: inset 0 0 20px black, 0 0 20px #aa00ff, 0 0 50px #53007d;
+    background-image: radial-gradient(#0096ff, #406fdd, #004cff);
+    border-radius: 100%;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+    &:active {
+        cursor: move;
+        box-shadow: inset 0 0 20px rgb(46, 77, 162), 0 0 20px #c876f1, 0 0 50px #d18bf4;
+    }
+}
+
+.changeBall {
+    top: 10px;
+    left: 10px;
+    transition: 0.1s, 0.3s box-shadow, 0.3s border-color;
+}
+
+.imgBall {
+    pointer-events: none;
+    height: 80%;
+    z-index: 0;
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transition: 0.4s;
+}
+
+.ocultar {
+    animation: hideView 1.5s forwards;
+}
+.mostrar {
+    animation: showView 1.5s forwards;
+}
+.time {
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-family: title;
+    font-size: 100%;
+    text-shadow: 0 0 5px black;
+    width: 80px;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+    option {
+        color: black;
+        font-size: 40%;
+    }
+}
+
+@keyframes hideView {
+    0% {
+        z-index: 1;
+        top: 0;
+    }
+    50% {
+        top: -200px;
+        transform: scale(70%);
+    }
+    100% {
+        top: 0;
+        transform: scale(70%);
+        z-index: 0;
+    }
+}
+@keyframes showView {
+    0% {
+        z-index: 0;
+        transform: scale(70%);
+        top: 0;
+    }
+    50% {
+        top: 200px;
+        transform: scale(70%);
+    }
+    100% {
+        top: 0;
+        transform: scale(100%);
+        z-index: 1;
+    }
+}
