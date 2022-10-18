@@ -11,7 +11,7 @@ export class IndexhomeComponent implements OnInit {
   interval: any;
   hora1!: string[];
   hora2!: string[];
-  currentHora: string[] = ['15', '00', '00'];
+  currentHora: string[] = ['18', '00', '00'];
   currentAux: string[] = ['18', '30', '00'];
   user = "user1";
   horas: string[] = [];
@@ -43,12 +43,12 @@ export class IndexhomeComponent implements OnInit {
   setDate() {
     clearInterval(this.interval);
     this.hora1 = this.getCurrentDate(this.currentHora[0], this.currentHora[1], this.currentHora[2]);
-    // this.hora2 = this.getCurrentDate(this.currentAux[0], this.currentAux[1], this.currentAux[2]);
+    this.hora2 = this.getCurrentDate(this.currentAux[0], this.currentAux[1], this.currentAux[2]);
 
     this.interval = setInterval(() => {
       this.aux = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
       this.hora1 = this.substractDate(this.hora1[0], this.hora1[1], this.hora1[2]);
-      // this.hora2 = this.substractDate(this.hora2[0], this.hora2[1], this.hora2[2]);
+      this.hora2 = this.substractDate(this.hora2[0], this.hora2[1], this.hora2[2]);
     }, 1000)
   }
 

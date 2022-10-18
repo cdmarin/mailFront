@@ -9,11 +9,12 @@
             <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
         </select>
         :
-        <select [(ngModel)]="currentHora[2]" (change)="setDate()" class="time">
+        <!-- <select [(ngModel)]="currentHora[2]" (change)="setDate()" class="time">
             <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
-        </select>
+        </select> -->
+        {{currentHora[2]}}
     </h1>
-    <!-- <table class="tiempoTable {{claseT2}}">
+    <table class="tiempoTable {{claseT2}}">
         <thead>
             <tr class="timeHeader">
                 <th>HOURS</th>
@@ -32,7 +33,7 @@
                 <td>{{hora2[2]}}</td>
             </tr>
         </tbody>
-    </table> -->
+    </table>
     <table class="tiempoTable {{claseT1}}">
         <thead>
             <tr class="timeHeader">
