@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "mailFront"
+  "defaultProject": "mailFront",
+  "cli": {
+    "analytics": "d0f05b4f-82dc-4b31-80cd-77e1d6cd55ca"
+  }
 }
