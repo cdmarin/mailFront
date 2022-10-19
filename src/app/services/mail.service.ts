@@ -20,7 +20,7 @@ export class MailService {
     return this.http.post(serverUrl + "envio", {
       mail: user,
       asunto: "Hola buenas JeJe",
-      text: "Bbyyyyyyyyyyyyyyy",
+      text: "Cositas",
       html: "Te mandé el correo :D"
     }, httpOptions);
   }
