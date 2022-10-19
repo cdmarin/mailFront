@@ -135,8 +135,45 @@ $color: #310a65;
         width: 80px;
         height: 80px;
     }
-}
 
+    @keyframes hideView {
+        0% {
+            z-index: 1;
+            top: 0;
+        }
+
+        50% {
+            top: -200px;
+            transform: scale(70%);
+        }
+
+        100% {
+            top: 0;
+            transform: scale(70%);
+            z-index: 0;
+        }
+    }
+
+    @keyframes showView {
+        0% {
+            z-index: 0;
+            transform: scale(70%);
+            top: 0;
+        }
+
+        50% {
+            top: 200px;
+            transform: scale(70%);
+        }
+
+        100% {
+            top: 0;
+            transform: scale(100%);
+            z-index: 1;
+        }
+    }
+}
+//MOVIL
 @media screen and (max-width: 850px) {
     .title {
         padding-top: 50px;
@@ -167,41 +204,41 @@ $color: #310a65;
         width: 60px;
         height: 60px;
     }
-}
 
-@keyframes hideView {
-    0% {
-        z-index: 1;
-        top: 0;
+    @keyframes hideView {
+        0% {
+            z-index: 1;
+            top: 0;
+        }
+
+        50% {
+            top: -150px;
+            transform: scale(70%);
+        }
+
+        100% {
+            top: 0;
+            transform: scale(70%);
+            z-index: 0;
+        }
     }
 
-    50% {
-        top: -200px;
-        transform: scale(70%);
-    }
+    @keyframes showView {
+        0% {
+            z-index: 0;
+            transform: scale(70%);
+            top: 0;
+        }
 
-    100% {
-        top: 0;
-        transform: scale(70%);
-        z-index: 0;
-    }
-}
+        50% {
+            top: 150px;
+            transform: scale(70%);
+        }
 
-@keyframes showView {
-    0% {
-        z-index: 0;
-        transform: scale(70%);
-        top: 0;
-    }
-
-    50% {
-        top: 200px;
-        transform: scale(70%);
-    }
-
-    100% {
-        top: 0;
-        transform: scale(100%);
-        z-index: 1;
+        100% {
+            top: 0;
+            transform: scale(100%);
+            z-index: 1;
+        }
     }
 }
