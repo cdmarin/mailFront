@@ -47,8 +47,8 @@ export class IndexhomeComponent implements OnInit {
 
     this.interval = setInterval(() => {
       this.aux = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
-      this.hora1 = this.substractDate(this.hora1[0], this.hora1[1], this.hora1[2]);
-      this.hora2 = this.substractDate(this.hora2[0], this.hora2[1], this.hora2[2]);
+      this.hora1 = this.getCurrentDate(this.currentHora[0], this.currentHora[1], this.currentHora[2]);
+      this.hora2 = this.getCurrentDate(this.currentAux[0], this.currentAux[1], this.currentAux[2]);
     }, 1000)
   }
 
