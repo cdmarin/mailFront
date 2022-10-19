@@ -104,7 +104,6 @@ $color: #310a65;
 
     option {
         color: black;
-        font-size: 40%;
     }
 }
 
@@ -127,6 +126,12 @@ $color: #310a65;
     .timeBody {
         font-size: 800%;
     }
+
+    .time {
+        option {
+            font-size: 40%;
+        }
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -147,6 +152,12 @@ $color: #310a65;
 
     .timeBody {
         font-size: 190%;
+    }
+
+    .time {
+        option {
+            font-size: 100%;
+        }
     }
 }
 
