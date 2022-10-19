@@ -56,8 +56,6 @@ $color: #310a65;
 }
 
 .changeBall {
-    top: 10px;
-    left: 10px;
     transition: 0.1s, 0.3s box-shadow, 0.3s border-color;
 }
 
@@ -136,6 +134,11 @@ $color: #310a65;
         height: 80px;
     }
 
+    .changeBall {
+        top: 10px;
+        left: 10px;
+    }
+
     @keyframes hideView {
         0% {
             z-index: 1;
@@ -205,6 +208,11 @@ $color: #310a65;
     .ball {
         width: 60px;
         height: 60px;
+    }
+
+    .changeBall {
+        bottom: 10px;
+        right: 10px;
     }
 
     @keyframes hideView {
