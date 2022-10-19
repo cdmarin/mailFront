@@ -32,7 +32,7 @@ export class IndexhomeComponent implements OnInit {
     for (let i = 0; i < 60; i++) {
       this.minSec[i] = this.formatNumber(i);
     }
-    // this.mail.setData('melmartincasas@gmail.com').subscribe({
+    // this.mail.setData('correito@gmail.com').subscribe({
     //   next: (data) => {
     //     console.log(data);
     //   }
