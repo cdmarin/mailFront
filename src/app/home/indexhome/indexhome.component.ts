@@ -112,10 +112,10 @@ export class IndexhomeComponent implements OnInit {
     if (!this.animating) {
       this.animating = true;
       if (!this.dragging) {
-        // 
+        /*
         var aux = this.currentHora;
         this.currentHora = this.currentAux;
-        this.currentAux = aux;
+        this.currentAux = aux;*/
 
         if (this.claseT1 == 'mostrar' || this.claseT1 == '') {
           this.claseT1 = 'ocultar';
