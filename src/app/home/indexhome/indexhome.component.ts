@@ -7,7 +7,6 @@ import { MailService } from 'src/app/services/mail.service';
   styleUrls: ['./indexhome.component.scss']
 })
 export class IndexhomeComponent implements OnInit {
-  aux = '';
   interval: any;
   hora1!: string[];
   hora2!: string[];
@@ -46,7 +45,6 @@ export class IndexhomeComponent implements OnInit {
     this.hora2 = this.getCurrentDate(this.currentAux[0], this.currentAux[1], this.currentAux[2]);
 
     this.interval = setInterval(() => {
-      this.aux = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
       this.hora1 = this.getCurrentDate(this.currentHora[0], this.currentHora[1], this.currentHora[2]);
       this.hora2 = this.getCurrentDate(this.currentAux[0], this.currentAux[1], this.currentAux[2]);
     }, 1000)
@@ -59,26 +57,6 @@ export class IndexhomeComponent implements OnInit {
     });
   }
 
-  substractDate(horaS: string, minS: string, secS: string) {
-    let hora = parseInt(horaS);
-    let min = parseInt(minS);
-    let sec = parseInt(secS) - 1;
-
-    if (sec < 0) {
-      sec = 59;
-      min--;
-      if (min < 0) {
-        min = 59;
-        hora--;
-        if (hora < 0) {
-          hora = 23;
-        }
-      }
-    }
-
-    return [this.formatNumber(hora), this.formatNumber(min), this.formatNumber(sec)];
-  }
-
   getCurrentDate(horaS: string, minS: string, secS: string): string[] {
     const fecha = new Date();
 
@@ -86,19 +64,16 @@ export class IndexhomeComponent implements OnInit {
     let min = parseInt(minS);
     let sec = parseInt(secS);
 
-    let horax = hora - fecha.getHours();
+    let horax = hora - fecha.getHours() - 1;
     let minx = min - fecha.getMinutes() - 1;
-    let secx = sec - fecha.getSeconds();
+    let secx = sec - fecha.getSeconds() - 1;
 
     if (secx < 0) {
       secx = 59 - (fecha.getSeconds() - sec);
-      minx--;
     }
 
     if (minx < 0) {
       minx = 59 - (fecha.getMinutes() - min);
-      horax--;
-
     }
 
     if (horax < 0) {
@@ -112,10 +87,6 @@ export class IndexhomeComponent implements OnInit {
     if (!this.animating) {
       this.animating = true;
       if (!this.dragging) {
-        /*
-        var aux = this.currentHora;
-        this.currentHora = this.currentAux;
-        this.currentAux = aux;*/
 
         if (this.claseT1 == 'mostrar' || this.claseT1 == '') {
           this.claseT1 = 'ocultar';
