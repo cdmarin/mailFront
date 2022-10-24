@@ -64,8 +64,8 @@ export class IndexhomeComponent implements OnInit {
     let min = parseInt(minS);
     let sec = parseInt(secS);
 
-    let horax = hora - fecha.getHours() - 1;
-    let minx = min - fecha.getMinutes() - 1;
+    let horax = hora - fecha.getHours();
+    let minx = min - fecha.getMinutes();
     let secx = sec - fecha.getSeconds() - 1;
 
     if (secx < 0) {
@@ -74,6 +74,7 @@ export class IndexhomeComponent implements OnInit {
 
     if (minx < 0) {
       minx = 59 - (fecha.getMinutes() - min);
+      horax--;
     }
 
     if (horax < 0) {
