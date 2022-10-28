@@ -10,9 +10,8 @@ export class IndexhomeComponent implements OnInit {
   interval: any;
   hora1!: string[];
   hora2!: string[];
-  currentHora: string[] = ['19', '50', '00'];
+  currentHora: string[] = ['18', '00', '00'];
   currentAux: string[] = ['18', '30', '00'];
-  user = "user1";
   horas: string[] = [];
   minSec: string[] = [];
   tiempoFinal = false;
