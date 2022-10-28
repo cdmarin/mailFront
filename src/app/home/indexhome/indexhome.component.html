@@ -1,17 +1,35 @@
 <div class="contenedorTiempo">
-    <h1 class="title">
-        Tiempo restante para las
-        <select [(ngModel)]="currentHora[0]" (change)="setDate()" class="time">
-            <option *ngFor="let item of horas; let i=index" value="{{item}}">{{item}}</option>
-        </select>
-        :
-        <select [(ngModel)]="currentHora[1]" (change)="setDate()" class="time">
-            <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
-        </select>
-        :
-        {{currentHora[2]}}
-    </h1>
-    <table class="tiempoTable {{claseT2}}">
+    <ng-container *ngIf="claseT1=='' || claseT1=='mostrar'; else elseTemplate">
+        <h1 class="title">
+            Tiempo restante para las
+            <select [(ngModel)]="currentHora[0]" (change)="setDate()" class="time">
+                <option *ngFor="let item of horas; let i=index" value="{{item}}">{{item}}</option>
+            </select>
+            :
+            <select [(ngModel)]="currentHora[1]" (change)="setDate()" class="time">
+                <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
+            </select>
+            :
+            {{currentHora[2]}}
+        </h1>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <h1 class="title">
+            Tiempo restante para las
+            <select [(ngModel)]="currentAux[0]" (change)="setDate()" class="time">
+                <option *ngFor="let item of horas; let i=index" value="{{item}}">{{item}}</option>
+            </select>
+            :
+            <select [(ngModel)]="currentAux[1]" (change)="setDate()" class="time">
+                <option *ngFor="let item of minSec; let i=index" value="{{item}}">{{item}}</option>
+            </select>
+            :
+            {{currentAux[2]}}
+        </h1>
+    </ng-template>
+
+    <table class="tiempoTable {{claseT2}}"
+        [ngClass]="{'parpadeo': (claseT2=='mostrar' || claseT2=='') && tiempoParpaedo}">
         <thead>
             <tr class="timeHeader">
                 <th>HOURS</th>
@@ -31,7 +49,8 @@
             </tr>
         </tbody>
     </table>
-    <table class="tiempoTable {{claseT1}}">
+    <table class="tiempoTable {{claseT1}}"
+        [ngClass]="{'parpadeo': (claseT1=='mostrar'|| claseT1=='') && tiempoParpaedo}">
         <thead>
             <tr class="timeHeader">
                 <th>HOURS</th>
@@ -57,11 +76,16 @@
         <img class="imgBall" src="/assets/IMG/user.png" alt="imgUser.png">
     </div>
 
-    <!-- <div class="ball timeUser" [ngClass]="{'extender': activo==true, 'aparecer':activo==false}"
-        (cdkDragStarted)="drag1()" (cdkDragEnded)="drag2()" cdkDragBoundary=".contenedorTiempo" cdkDrag>
-        <img (click)="changeState()" class="imgBall" src="/assets/IMG/timer.png" alt="">
-        <input type="text" class="time" [(ngModel)]="myTime" [ngClass]="{'display':activo==null}" maxlength="8"
-            (keyup)="controlTime()">
-
-    </div> -->
 </div>
+
+<ng-container *ngIf="tiempoFinal">
+    <div class="imgDecoracion confetti c1"></div>
+    <div class="imgDecoracion confetti c2"></div>
+    <div class="imgDecoracion m1"></div>
+    <div class="imgDecoracion m2"></div>
+    <div class="imgDecoracion m3"></div>
+    <div class="imgDecoracion m4"></div>
+    <div class="imgDecoracion m5"></div>
+    <div class="imgDecoracion m6"></div>
+    <div class="imgDecoracion m7"></div>
+</ng-container>
